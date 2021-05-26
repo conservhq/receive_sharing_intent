@@ -116,7 +116,7 @@ class ReceiveSharingIntentPlugin : FlutterPlugin, ActivityAware, MethodCallHandl
                 //val extras = intent.extras?.get(Intent.EXTRA_STREAM)
                 if (intent.action == Intent.ACTION_SEND || intent.action == Intent.ACTION_SEND_MULTIPLE) { // Sharing images or videos
 
-                    val value = getMediaUris(context, intent)
+                    val value = getMediaUris(intent)
                     if (initial) initialMedia = value
                     latestMedia = value
                     eventSinkMedia?.success(latestMedia?.toString())
